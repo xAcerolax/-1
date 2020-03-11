@@ -16,7 +16,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	//初期化関数
+	MapImageInit();
+	MapInit();
 	PlayerImageInit();
+	PlayerInit();
 
 	//メインループ
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
@@ -24,6 +27,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		ClsDrawScreen();	//画面消去
 
 		//実際の処理↓
+		MapDraw();
+
+		PlayerMain();
 		PlayerDraw();
 
 		ScreenFlip();		//裏画面を表画面にコピー
