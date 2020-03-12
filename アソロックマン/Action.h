@@ -4,10 +4,10 @@
 #include <math.h>
 
 //画面の横縦サイズ
-#define SCREEN_SIZE_X 760
+#define SCREEN_SIZE_X 768
 #define SCREEN_SIZE_Y 480
 
-#define MAP_CHIP_X 48
+#define MAP_CHIP_X 24
 #define MAP_CHIP_Y 15
 
 #define PLAYER_SIZE_X 32
@@ -64,6 +64,8 @@ typedef struct
 }CHARACTER;
 
 //グローバル変数
+extern CHARACTER player1;
+extern CHARACTER player2;
 extern int mapData[MAP_CHIP_Y][MAP_CHIP_X];
 
 
@@ -78,5 +80,15 @@ void PlayerImageInit(void);
 void PlayerInit(void);
 void PlayerMain(void);
 void PlayerDraw(void);
+
+//プレイヤー2
+void Player2ImageInit(void);
+void Player2Init(void);
+void Player2Main(void);
+void Player2Draw(void);
+
+void HitCheckPlayerShot(void);
+void HitCheckPlayer2Shot(void);
+
 
 
